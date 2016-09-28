@@ -1,7 +1,7 @@
 /* Variables */
 
   /* Colors */
-$grey: 0,0,0,.25;
+$dark-grey: #999999;
 $aqua-blue: #00cfff;
 $mint: #EEFDF9;
 $light-green: #00E2AC;
@@ -26,18 +26,23 @@ $light-green: #00E2AC;
   &.landscape {
     color: white;
   }
+  &.bridge {
+   background-image: url('../img/full-width.jpg');
+   width: 100%;
+ }
 }
 
-  /* why isn't the .bridge related to the .hero in my code? */
+  /* why wasn't the .bridge related to the .hero in my code originally? */
 
 /* Intro Section */
 
-#intro h1, h5 {
-  text-shadow: 0px, 5px, 5px, 0px;
-  color: grey;
+#intro {
+  h1, h5 {
+   text-shadow: 0px 5px 5px rgba(0,0,0,0.25);;
+  }
   h1 {
-    font-size: 72px;
-    line-heigh: 55px;
+   font-size: 72px;
+   line-height: 55px;
   }
   h5 {
     margin-bottom: 20px;
@@ -58,7 +63,7 @@ $light-green: #00E2AC;
   border-radius: 4px;
   cursor: pointer;
   &:hover {
-    background-color: aqua-blue;
+    background-color: $aqua-blue;
   }
 }
 
@@ -66,8 +71,9 @@ $light-green: #00E2AC;
 /* About Me Section */
 #about {
   min-height: 0;
-  &.left-col {
-    color: aqua-blue;
+
+.left-col {
+    color: $light-green;
     padding: 20ox;
     text-transform: uppercase;
     text-align: right;
@@ -77,15 +83,15 @@ $light-green: #00E2AC;
       font-size: 60px;
       font-weight: 700;
       line-height: 55px;
-    }
-    h5 {
-      font-size: 24px;
-      line-height: 30px;
-    }
+      }
   }
-  &.righ-col {
-    padding: 20ox;
-    text-align: right;
+
+.right-col {
+  padding: 20px;
+  text-align: left;
+  h5 {
+    font-size: 24px;
+    line-height: 30px;
   }
 }
 
@@ -93,24 +99,24 @@ $light-green: #00E2AC;
 /* Gallery Section */
 
 #gallery {
-  background-color: mint;
-  &.container {
+  background-color: $mint;
+  .container {
     padding: 0;
     margin: 0;
   }
-  &.col-md-4 {
-    overflow: hidden;
-    padding: 5px, 0px, 5px, 10px;
-    img {
-      height: 100%;
-      max-width: 390px;
-      max-height: 380px;
-    }
+
+.col-md-4 {
+  overflow: hidden;
+  padding: 0 5px 10px 5px;
+  img {
+    height: 100%;
+    max-width: 390px;
+    max-height: 280px;
   }
 }
 
 
-/* Bridge Section */
+/* Bridge Section -- now commented out based on the notes
 
 #bridge {
   background: url(http://static1.squarespace.com/static/578d4493414fb58593f0ad44/t/57c75836579fb3f736fd169d/1472682039255/full-width.jpg);
@@ -119,6 +125,7 @@ $light-green: #00E2AC;
   }
 }
 
+*/
 
 /* Contact Section */
 #contact {
@@ -134,10 +141,7 @@ $light-green: #00E2AC;
 #social {
   padding: 20px;
   a {
-    margin-top: 0px;
-    margin-right: 10px;
-    margin-bottom: 0px;
-    margin-left: 10px;
+    margin: 0 10px 0 10px;
     text-decoration: none;
   }
   img {
@@ -159,7 +163,7 @@ $light-green: #00E2AC;
   display: flex;
   flex-direction: row;
   align-items: center;
-  #footer-item {
+  .footer-item {
     max-width: 100px;
     text-align: left;
   }
@@ -175,7 +179,7 @@ $light-green: #00E2AC;
 
 #copyright {
   margin-right: auto;
-  color: light-green;
+  color: $light-green;
   text-align: right;
   span {
     display: flex;
@@ -183,21 +187,23 @@ $light-green: #00E2AC;
   }
 }
 
-@media screen and (max-width:480px) {
-  #intro {
-    min-height: 640px;
+@media only screen and (max-width: 480px) {
+#intro {
+  min-height: 640px;
+}
+
+.left-col h2 {
+  font-size: 42px;
+  line-height: 40px;
+}
+
+#footer {
+  margin-left: 20px;
+  margin-right: 20px;
+  h4 {
+    padding-right: 20px;
   }
-  #about left-col {
-    font-size: 42px;
-    line-height: 40px;
-  }
-  #footer {
-      margin-left: 20px;
-      margin-right: 20px;
-      h4 {
-        padding-right: 20ox;
-      }
-  }
+}
 }
 
 @media screen and (max-width: 992px) {
